@@ -4,10 +4,13 @@ import './style.css';
 import SchemeColor from '../SchemeColor';
 import { palettes } from '../palettes';
 
-const Palette = ({ imagePalette, namePalette, index, descriptionPalette, author, link }) => {
+const Palette = ({ imagePalette, namePalette, index, descriptionPalette, author, link, directionPalette }) => {
+    
+    const paletteClass = directionPalette === "vertical" ? "palette-scheme palette-scheme--vertical" : "palette-scheme palette-scheme--horizontal";
+    
     return (
         <div className="palette">
-            <div className="palette-scheme palette-scheme--vertical">
+            <div className={paletteClass}>
                 <img className="scheme-image" src={imagePalette} alt={namePalette} />
                 <div className="scheme-colors">
                     {palettes[index].colors.map((color) =>

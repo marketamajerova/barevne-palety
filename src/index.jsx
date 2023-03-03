@@ -20,6 +20,7 @@ const App = () => {
             author={item.attribution.name}
             link={item.attribution.url}
             index={palettes.indexOf(item)}
+            directionPalette={item.direction}
             />)}
 
     
